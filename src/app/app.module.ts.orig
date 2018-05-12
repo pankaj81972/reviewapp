@@ -1,0 +1,72 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { MyApp } from './app.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { LoginPage } from '../pages/login/login';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+<<<<<<< HEAD
+import {MovieDetailsPage} from "../pages/movie-details/movie-details";
+import {HttpClientModule} from "@angular/common/http";
+import {MovieApiProvider} from "../providers/movie-api/movie-api";
+import {MovieSearchPage} from "../pages/movie-search/movie-search";
+import { environment } from "../environments/environment";
+import {HomePage} from "../pages/home/home";
+import {ListPage} from "../pages/list/list";
+=======
+import { MovieApiProvider } from '../providers/movie-api/movie-api';
+import { HttpClientModule } from '@angular/common/http';
+
+
+>>>>>>> 2a8783cdbc545d4c99c450f811d0aba10c824ba0
+
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage,
+    ListPage,
+    MovieDetailsPage,
+    MovieSearchPage,
+    LoginPage
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+<<<<<<< HEAD
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+
+=======
+    HttpClientModule
+>>>>>>> 2a8783cdbc545d4c99c450f811d0aba10c824ba0
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    ListPage,
+    MovieDetailsPage,
+    MovieSearchPage,
+    LoginPage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+<<<<<<< HEAD
+    MovieApiProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+=======
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MovieApiProvider
+>>>>>>> 2a8783cdbc545d4c99c450f811d0aba10c824ba0
+  ]
+})
+export class AppModule {}
+
+
+

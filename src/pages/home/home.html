@@ -1,0 +1,112 @@
+<ion-header *ngIf="loaded">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" style="color: ghostwhite"></ion-icon>
+    </button>
+
+    <ion-title>Home</ion-title>
+
+    <span class="fillSpace">
+      <ion-icon name="md-search" style="color: ghostwhite" (click)="searchDB()"></ion-icon>
+    </span>
+  </ion-navbar>
+</ion-header>
+
+<div *ngIf="!loaded" class="sploosh">
+  <div>Loading...</div>
+</div>
+
+<ion-content padding>
+
+  <div *ngIf="loaded">
+  <div class="nav">
+    <div class="titleDiv">
+      <h3 class="title">{{title}}</h3>
+    </div>
+
+    <div class="searchDiv">
+
+    </div>
+
+
+
+  </div>
+
+
+  <div class="coolSlides" *ngIf="posters && posters.length">
+    <ion-slides autoplay=“1000” loop=“true” speed=“300” loop>
+      <ion-slide *ngFor="let poster of posters">
+        <img src={{movie.getBackdropPath(poster.backdrop_path)}} (click)="getDetails(poster.id)">
+
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="popular">
+    <h3 class="heading">Most Popular</h3>
+    <div class="wrap">
+      <div *ngFor="let thumb of popular" class="scroll">
+        <div class="scrollingBoxes" (click)="getDetails(thumb.id)">
+          <img src={{movie.getPosterPath(thumb.poster_path)}}>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="disney">
+    <h3 class="heading">Disney</h3>
+    <div class="wrap">
+      <div *ngFor="let thumb of disney" class="scroll">
+        <div class="scrollingBoxes" (click)="getDetails(thumb.id)">
+          <img src={{movie.getPosterPath(thumb.poster_path)}}>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="action">
+    <h3 class="heading">Action</h3>
+    <div class="wrap">
+      <div *ngFor="let thumb of action" class="scroll">
+        <div class="scrollingBoxes" (click)="getDetails(thumb.id)">
+          <img src={{movie.getPosterPath(thumb.poster_path)}}>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="comedy">
+    <h3 class="heading">Comedy</h3>
+    <div class="wrap">
+      <div *ngFor="let thumb of comedy" class="scroll">
+        <div class="scrollingBoxes" (click)="getDetails(thumb.id)">
+          <img src={{movie.getPosterPath(thumb.poster_path)}}>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="favorites">
+    <h3 class="heading">Favorites</h3>
+    <h3 *ngIf="!favorites">You have no movies in your favorites collection.</h3>
+    <div class="wrap" *ngIf="favorites">
+      <div *ngFor="let thumb of favorites" class="scroll">
+        <div class="scrollingBoxes" (click)="getDetails(thumb.id)">
+          <img src={{movie.getPosterPath(thumb.poster_path)}}>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footing">
+    <p class="finePrint">Flash Flix LLC, all rights reserved</p>
+  </div>
+
+  </div>
+
+
+</ion-content>

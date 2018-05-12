@@ -1,0 +1,8 @@
+{
+  "name": "movie-review-app",
+  "app_id": "f3f7a7eb",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

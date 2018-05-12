@@ -1,0 +1,99 @@
+<!--
+  Generated template for the MovieDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="selectedMovie">{{selectedMovie.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card class="card-details" *ngIf="selectedMovie">
+
+    <ion-card-header class="details-header">
+      <img class="movie-poster" src="{{movieCoverBaseUrl + selectedMovie.poster_path}}">
+
+      <div class="movie-details">
+        <div class="movie-title">{{selectedMovie.title}}</div>
+        <div class="placement">
+          <div class="movie-release-year"> {{movieReleaseDate.getFullYear()}}</div>
+          <div class="bookmark">
+            <span *ngIf="favorite == false" (click)="addToFavorites()"><i class="far fa-bookmark"></i></span>
+            <span *ngIf="favorite == true" (click)="removeFavorite()"><i class="fas fa-bookmark"></i></span>
+          </div>
+        </div>
+      </div>
+
+    </ion-card-header>
+
+    <ion-toolbar no-border>
+      <ion-segment [(ngModel)]="segmentOption">
+        <ion-segment-button value="description">
+          Description
+        </ion-segment-button>
+
+        <ion-segment-button value="trailers">
+          Trailers
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+
+
+    <ion-card-content>
+      <div [ngSwitch]="segmentOption">
+        <div class="info" *ngSwitchCase="'description'">
+          {{selectedMovie.overview}}
+        </div>
+
+        <div class="info" *ngSwitchCase="'trailers'">
+          <div class="trailer" *ngFor="let trailer of trailers">
+            <a  href="{{movieApi.getTrailerUrl(trailer.key)}}">{{trailer.name}}</a>
+          </div>
+          <div class="notrailers" *ngIf="trailers.length == 0">
+            No trailers available.
+          </div>
+        </div>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="selectedMovie"  class="card-details">
+    <ion-card-header class="review-title">Movie Reviews</ion-card-header>
+    <ion-card-content>
+      <h6>Write a review</h6>
+      <form>
+        <ion-textarea [(ngModel)]="reviewText" class="text" maxlength="140" name="text" required></ion-textarea>
+        <span class="characters">{{maxCharacters - reviewText.length}} characters</span><br>
+
+        <span *ngIf="neg == false" (click)="negative()"><i class="far fa-thumbs-down thumb"></i></span>
+        <span *ngIf="neg == true" (click)="noReview()"><i class="fas fa-thumbs-down thumb"></i></span>
+
+        <span *ngIf="pos == false" (click)="positive()"><i class="far fa-thumbs-up thumb"></i></span>
+        <span *ngIf="pos == true" (click)="noReview()"><i class="fas fa-thumbs-up thumb"></i></span>
+
+
+        <button class="submit" ion-button (click)="submitReview()">Submit<span><ion-icon name="create-outline" icon-right></ion-icon></span></button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card-details" *ngFor="let review of reviews">
+    <ion-card-header style="color: ghostwhite">
+      <ion-icon name="thumbs-down" *ngIf="review.reviewType=='Negative'"></ion-icon>
+      <ion-icon name="thumbs-up" *ngIf="review.reviewType=='Positive'"></ion-icon>
+      {{review.reviewType}}
+    </ion-card-header>
+    <ion-card-content style="color: ghostwhite">{{review.review}}</ion-card-content>
+  </ion-card>
+
+
+
+
+</ion-content>

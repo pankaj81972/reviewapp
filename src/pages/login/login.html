@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="user-card round5">
+    <div class="login-box" *ngIf="loginMode">
+      <h1 class="title"> Login </h1>
+      <form class="login-form" name="login">
+        <input [(ngModel)]="email" type="email" name="email" class="email" placeholder="Email" autocomplete="true" required />
+        <input [(ngModel)]="password" type="password" name="password" class="password" placeholder="Password" autocomplete="true" required/>
+        <a type="submit" name="login" class="login" (click)="login()">
+          <ion-icon name="md-log-in"></ion-icon>
+          Login with Email
+        </a>
+      </form>
+
+      <div class="or"></div>
+      <a (click)="fbLogin()" class="login-with-fb">
+        <ion-icon name="logo-facebook"></ion-icon>
+        Login with Facebook
+      </a>
+
+      <a (click)="googleLogin()" class="login-with-google">
+        <ion-icon name="logo-google"></ion-icon>
+        Login with Google
+      </a>
+
+    </div>
+    <div class="signUp-box" *ngIf="!loginMode">
+      <h1 class="title"> Sign Up </h1>
+      <form class="signUp-form" name="signUp">
+        <input [(ngModel)]="username" type="text" name="username" class="username" placeholder="Username" autocomplete="off" required/>
+        <input [(ngModel)]="email" type="email" name="email" class="email" placeholder="Email" autocomplete="off" required/>
+        <input [(ngModel)]="password" type="password" name="password" class="password" placeholder="Password" autocomplete="off" required/>
+        <input [(ngModel)]="confirmPassword" type="password" name="confirm-password" class="confirm-password" placeholder="Confirm Password" autocomplete="off" required />
+        <a type="submit" name="signup" class="signup" (click)="signUp()">
+          <ion-icon name="md-person-add"></ion-icon>
+          Create Account
+        </a>
+      </form>
+    </div>
+
+    <!--Footer -->
+
+    <div ngClass="footer">
+      <span style="color: #A9ADAF"> </span>
+      <a class="toggle-link" href="#" (click)="toggleLoginMode()">
+      <ion-icon name="md-person-add"></ion-icon>
+        Sign Up
+      </a>
+    </div>
+  </div>
+
+

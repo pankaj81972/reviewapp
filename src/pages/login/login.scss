@@ -1,0 +1,262 @@
+page-login{
+  *
+  {
+    box-sizing:         border-box;
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+.title{
+  color: lightgray;
+  text-shadow: 0px 1px 1px #4d4d4d;
+  font-size: 40px;
+  text-align: center;
+}
+  .email,
+  .password,
+  .confirm-password,
+  .username,
+  .name {
+    color: ghostwhite;
+    text-shadow: 0px 1px 1px #4d4d4d;
+    font-size: 17px;
+  }
+  ::placeholder{
+    color: ghostwhite;
+    text-shadow: 0px 1px 1px #4d4d4d;
+    font-size: 17px;
+  }
+  .user-card
+  {
+    width: 350px;
+    height: 385px;
+    margin: 70px auto;
+    position: relative;
+    background: #2A2E2D;
+    overflow: hidden;
+    box-shadow:         0 1px 3px 0 ghostwhite;
+    -moz-box-shadow:    0 1px 3px 0 ghostwhite;
+    -webkit-box-shadow: 0 1px 3px 0 ghostwhite;
+    border-radius:         5px;
+    -moz-border-radius:    5px;
+    -webkit-border-radius: 5px;
+  }
+
+  input
+  {
+    width: 100%;
+    height: 40px;
+    border-radius:         5px;
+    -moz-border-radius:    3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #2A2E2D;
+    padding: 3px 12px;
+    margin: 5px 0;
+    background-color: #44484B;
+  }
+
+  input:focus
+  {
+    outline: none;
+    border: 1px solid #7F878C;
+    transition:         all .5s ease-in-out;
+    -o-transition:      all .5s ease-in-out;
+    -moz-transition:    all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+  }
+
+  .login-box,
+  .signUp-box
+  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 25px);
+    background: #2A2E2D;
+    border-radius:         5px;
+    -moz-border-radius:    5px;
+    -webkit-border-radius: 5px;
+  }
+
+  .login-box{
+    padding: 20px 40px;
+    right: 0px;
+  }
+
+  .signUp-box{
+    padding: 20px 40px;
+    right: 0px;
+  }
+  .signup{
+    margin: 6px 0;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    background: cadetblue;
+    color: #3A6061;
+    text-shadow: 0px 1px 1px #4d4d4d;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    font-size: 18px;
+    opacity: .95;
+    border-radius:         3px;
+    -moz-border-radius:    3px;
+    -webkit-border-radius: 3px;
+  }
+
+  .login {
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin: 6px 0;
+    background: cadetblue;
+    color: #3A6061;
+    text-shadow: 0px 1px 1px #4d4d4d;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    opacity: .95;
+    border-radius:         3px;
+    -moz-border-radius:    3px;
+    -webkit-border-radius: 3px;
+  }
+
+  .login:hover{opacity: 1}
+
+  .or
+  {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #A9ADAF;
+    position: relative;
+    margin: 16px 0;
+  }
+
+  .or:before
+  {
+    content: 'or';
+    width: 40px;
+    height: 18px;
+    position: absolute;
+    top: -5px;
+    right: calc(50% - 20px);
+    background-color: #2A2E2D;
+    text-align: center;
+    line-height: 10px;
+    color: #A9ADAF;
+  }
+
+  .login-with-fb
+  {
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin: 12px 0;
+    text-shadow: 0px 1px 1px #4d4d4d;
+    color: #2E4669;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    opacity: .95;
+    border-radius:         3px;
+    -moz-border-radius:    3px;
+    -webkit-border-radius: 3px;
+  }
+
+  .login-with-google
+  {
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin: 12px 0;
+    text-shadow: 0px 1px 1px #4d4d4d;
+    color: #6E251C;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    opacity: .95;
+    border-radius:         3px;
+    -moz-border-radius:    3px;
+    -webkit-border-radius: 3px;
+  }
+
+  .login-with-fb:hover,
+  .login-with-google:hover
+  {
+    opacity: 1;
+  }
+
+  .login-with-fb
+  {
+    background: #527EBF
+  }
+
+  .login-with-google
+  {
+    background: #DB4A37;
+  }
+
+
+  .login-with-google .icon
+  {
+    float: left;
+    font-size: 25px;
+    width: 50px;
+    height: auto;
+    margin: 4px;
+    padding: 2px;
+    text-align: center;
+    border-right: 1.5px inset #AD3B2C;
+  }
+
+  .login-with-fb .icon
+  {
+    float: left;
+    font-size: 25px;
+    width: 50px;
+    height: auto;
+    margin: 4px;
+    padding: 2px;
+    text-align: center;
+    border-right: 1.5px inset #3F6191;
+  }
+
+  .login .icon,
+  .signup .icon
+  {
+    float: left;
+    font-size: 25px;
+    width: 50px;
+    height: auto;
+    margin: 4px;
+    padding: 2px;
+    text-align: center;
+    border-right: 1.5px inset #4F8385;
+  }
+
+  /**** footer *****/
+
+  .user-card .footer
+  {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    color: #2A2E2D;
+    font-size: 13px;
+    font-family: sans-serif;
+  }
+
+  .footer a
+  {
+    color: #A9ADAF;
+  }
+
+
+}
+
